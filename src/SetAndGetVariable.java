@@ -1,7 +1,7 @@
 public class SetAndGetVariable {
     public static void main(String[] args) {
 
-        int A = 1;
+        int A = 1; //변수들의 값은 비교하여 true, false에 따라 변수값을 대채 한 값을 출력
         int B = 3;
         int C = 5;
         int D = 7;
