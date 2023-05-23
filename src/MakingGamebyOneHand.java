@@ -1,4 +1,4 @@
-public class MakingGamebyOneHandGame {
+public class MakingGamebyOneHand {
     public static void main(String[] args) {
         String A = "1";
         String B = "2";
