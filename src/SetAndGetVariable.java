@@ -17,7 +17,7 @@ public class SetAndGetVariable {
 
         }
         if (D != 9) {
-            System.out.println(B = 5);
+            System.out.println(B = C);
           
         }else{
             System.out.println(B = H);
