@@ -11,8 +11,35 @@ public class Ifs {
         if (first > second) {
             System.out.println(first);
         }
-        System.out.println("hello My World!!");
+
+        // 12시 이전 오전, 18이전은 오후, 24시까지 밤
+        int time = 15;
+        if (time < 12){
+            System.out.println("오전입니다.");
+        }
+        if (time < 18){
+            System.out.println("오후입니다.");
+
+        }
+        if (time < 24){
+            System.out.println("밤 입니다.");
+        }
+
+
+        // System.out.println("hello My World!!");
         // return 0;
+
+        if (time < 12){
+            System.out.println("오전입니다.");
+        }
+        else if (time < 18){
+            System.out.println("오후입니다.");
+
+        }
+        else{
+            System.out.println("밤 입니다.");
+        }
+        System.out.println("잘자");
     }
 
 }
