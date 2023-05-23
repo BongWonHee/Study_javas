@@ -16,17 +16,20 @@ public class SetAndGetVariable {
             System.out.println(C = 5);
 
         }
+        System.out.println(A + "" + B +"" + C + "" + D + ""); //김명곤님 코드 참조함.
         if (D != 9) {
             System.out.println(B = C);
           
         }else{
             System.out.println(B = H);
         }
+        System.out.println(A + "" + B +"" + C + "" + D + "");
         if(A == 10){
         System.out.println(C = F);
         } else{
             System.out.println(D = G );
         }
+        System.out.println(A + "" + B +"" + C + "" + D + "");
         // retrue 0;
 
     }
