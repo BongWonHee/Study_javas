@@ -30,7 +30,7 @@ public class SetAndGetVariable {
             System.out.println(D = G );
         }
         System.out.println(A + "" + B +"" + C + "" + D + "");
-        // retrue 0;
+        // return 0;
 
     }
 }
