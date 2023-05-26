@@ -19,5 +19,7 @@
 | Swith | [swiths.java](./src/swiths.java) | Swith 문 활용법 | |
 | WhilesWithScanner | [WhileWithScanner.java](./src/WhileWithScanner.java) | WhileScanner 응용문 | |
 | Break | [Breaks.java](./src/Breaks.java) | Break 활용법 | |
+| while | [PollWhiles.java](./src/cases/PollWhiles.java) | While 과제 | |
+| for | [CasherFor.java](./src/cases/CasherFor.java) | For문을 이용한 계산식 | |
 
 ## JAVA 연습문제
