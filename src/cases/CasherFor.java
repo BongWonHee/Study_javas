@@ -6,8 +6,8 @@ public class CasherFor {
     // 장바구니에 5개의 물품 가격을 입력하고 가격이 100원이 넘으면 초과 메시지를 생성하고, 0원으로 계산한다. 0을 입력하면 최종 가격을
     // 출력해준다.
     public static void main(String[] args) {
-
-        Scanner myOjt = new Scanner(System.in);
+        try {
+            Scanner myOjt = new Scanner(System.in);
 
         int[] price = new int[5];
 
@@ -46,6 +46,13 @@ public class CasherFor {
         // sum += price[i];
         // }System.out.println("합계 : " + price);
 
-    }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }finally{
+
+        }
+
+        
+    }//return 0 :
 
 }
