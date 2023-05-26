@@ -37,9 +37,9 @@ public class CasherFor {
         }
         System.out.println("--- 계산 종료 합니다.---");
         // 종료 후 총 입력된 수의 합을 출력한다.
-        // 합을 저장할 변수 초기화
+        
         // System.out.println(price[0] + price[1] + price[2] + price[3] + price[4]);
-        // 배열의 각 항을 순회하며 합을 구함
+        
 
         int sum = 0;
         for (int i = 0; i < price.length; i++) {
