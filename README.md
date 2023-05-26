@@ -4,7 +4,7 @@
 ## JAVA 기초문법
 | 제 목 | 작성 소스 | 설명 | 비 고 |
 | --- | --- | --- | --- |
-| Print | Main.java| 화면에 문자 출력 |  |
+| Print | Main.java | 화면에 문자 출력 | 코드 테스트에 활용중  |
 | If | [Ifs.java](https://github.com/BongWonHee/study_javas/blob/master/src/Ifs.java)| 사용자 조건의 true, false 를 판별하여 화면 출력 |  |
 | TypeCasting | [TypeCasting.java](https://github.com/BongWonHee/study_javas/blob/master/src/TypeCasting.java) | 데이터 타입 변화  | |
 | Loopfor | [Loopfor.java](https://github.com/BongWonHee/study_javas/blob/master/src/LoopNestedLoops.java) | for문을 활용한 loop | |
