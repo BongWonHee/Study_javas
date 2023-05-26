@@ -1,24 +1,25 @@
 import java.util.Scanner;
-
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 public class Main {
     public static void main(String[] args) {
 
         Scanner taja = new Scanner(System.in);
 
-        int a;
-        int b;
+        String a;
+        String b;
 
-        a = taja.nextInt();
-        b = taja.nextInt();
+        a = taja.nextLine();
+        b = taja.nextLine();
+
+        String time = ("a : b");
+        
          
-        if (a < 0 || b < 0) {
-            System.out.println("1");
-        } else if(a > 0 || b < 0){
-            System.out.println("2");
-        }
-
+    
     }
 
+    
     // return 0;
 
 }
