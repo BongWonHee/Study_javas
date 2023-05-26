@@ -18,11 +18,11 @@ public class CasherFor {
         for (int first = 0; first < price.length; first = first + 1) {
             money = myOjt.nextInt();
 
-            if (money > 0 && money <= 100) {
+            if (money > 0 && money < 100) {
                 System.out.println("가격은" + money + "원 입니다.");
                 // 가격이 0 이상이고 100보다 작거나 같으면 설정
                 price[first] = money;
-            } else if (money > 100) {
+            } else if (money >= 100) {
                 System.out.println("가격 100원을 초과 하였습니다.");
                 break;
 
