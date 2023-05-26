@@ -6,13 +6,15 @@ public class Main {
         Scanner taja = new Scanner(System.in);
 
         int a;
+        int b;
 
         a = taja.nextInt();
-
-        if (a % 4 == 0 && a % 100 == 0 && a % 400 == 0) {
+        b = taja.nextInt();
+         
+        if (a < 0 || b < 0) {
             System.out.println("1");
-        } else {
-            System.out.println("0");
+        } else if(a > 0 || b < 0){
+            System.out.println("2");
         }
 
     }
