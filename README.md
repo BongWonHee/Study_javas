@@ -20,9 +20,18 @@
 | WhilesWithScanner | [WhileWithScanner.java](./src/WhileWithScanner.java) | WhileScanner 응용문 | |
 | Break | [Breaks.java](./src/Breaks.java) | Break 활용법 | |
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 784cc161f17b8aa17faeb59ac0577cbe7987ce4c
 
 ## JAVA 연습문제
 | 제 목 | 작성 소스 | 설명 | 비 고 |
 | --- | --- | --- | --- |
+<<<<<<< HEAD
 | while | [PollWhiles.java](./src/cases/PollWhiles.java) | While 과제 | |
 | for | [CasherFor.java](./src/cases/CasherFor.java) | For문을 이용한 계산식 | |
+=======
+| for | [CasherFor.java](./src/cases/CasherFor.java) | For문을 이용한 계산식 과제| |
+| while | [PollWhiles.java](./src/cases/PollWhiles.java) | While 과제 | |
+>>>>>>> 784cc161f17b8aa17faeb59ac0577cbe7987ce4c
