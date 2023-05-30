@@ -14,24 +14,20 @@ public class MethodBasics {
     }
 
     // y의 메소드 과제
-    public int F(int x, int y){
-        int result = x + 1;
-        result = y + 1;
-        return result;
-    }
+    
     public static void main(String[] args) {
         try {
             int y = 0;
-            int x = 0;
-            int New = 0;
+            int x = 4;
+            
             // y = x + 1; //변수에 +1
             // MethodBasics metehodBasics = new MethodBasics();
             // y = metehodBasics.F(x);
             // y = F(x);
-            // y = y + 1; //변수에 +1
+            y = y + 1; //변수에 +1
             MethodBasics methodBasics = new MethodBasics();
             y = methodBasics.F(x);
-            New = methodBasics.F(y);
+            y = methodBasics.F(y);
              
         } catch (Exception e) {
             // TODO: handle exception

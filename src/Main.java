@@ -1,25 +1,23 @@
 import java.util.Scanner;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+
 public class Main {
     public static void main(String[] args) {
+        // Scanner my = new Scanner(System.in);
+        // int a;
+        // a = my.nextInt();
 
-        Scanner taja = new Scanner(System.in);
+        for (int i = 0; i < 5; i++) {
+            for (int j = 5; j > i; j -= 1) {
+                System.out.print("s");
 
-        String a;
-        String b;
+                for (int k = 0; k < i; k++) {
+                    System.out.print("*");
+                }
+            }
 
-        a = taja.nextLine();
-        b = taja.nextLine();
+        }
+        System.out.println();
 
-        String time = ("a : b");
-        
-         
-    
     }
-
-    
-    // return 0;
 
 }
