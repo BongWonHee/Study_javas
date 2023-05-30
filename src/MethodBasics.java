@@ -14,7 +14,7 @@ public class MethodBasics {
     // }
 
     // y의 메소드 과제
-    public int re(int y){
+    public int New(int y){
         int yresult = y + 1;
         return yresult;
     }
@@ -29,7 +29,7 @@ public class MethodBasics {
             // y = F(x);
             // y = y + 1; //변수에 +1
             MethodBasics yrecall = new MethodBasics();
-            z = yrecall.re(y); 
+            z = yrecall.New(y); 
         } catch (Exception e) {
             // TODO: handle exception
         }
