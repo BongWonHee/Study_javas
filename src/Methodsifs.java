@@ -11,7 +11,7 @@ public class Methodsifs {
             } else if (times < 18) {
                 str = "오후입니다.";
 
-            } else {
+            } else if(times > 25) { 
                 str = "밤 입니다.";
             }
 

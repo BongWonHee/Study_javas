@@ -1,5 +1,5 @@
 
-public class MathodSwhichs {
+public class MethodSwhichs {
     public String today(int day){
         String str = "";
         try {
@@ -30,7 +30,7 @@ public class MathodSwhichs {
         
         try {
 
-            MathodSwhichs mathodSwhichs = new MathodSwhichs();
+            MethodSwhichs mathodSwhichs = new MethodSwhichs();
             String returnResult = mathodSwhichs.today(day);
           
             System.out.println(returnResult);
