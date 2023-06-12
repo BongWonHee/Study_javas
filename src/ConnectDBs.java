@@ -39,13 +39,14 @@ public class ConnectDBs {
 
             String companyid = "CAR-01";
             String company = "AUDI";
+            String newcompany = "페라리";
             int count = 0;
 
             query = "insert into factorys " + "(COMPANY_ID, COMPANY) " + "value " + "('" + companyid + "', '" + company
                     + "') ";
             count = statement.executeUpdate(query); // executeUpdate 는 insert, update, delete 를 사용할때 씀
 
-            query = " UPDATE factorys " + "SET COMPANY = '페라리' " + "WHERE COMPANY_ID = '"+companyid+"' ";
+            query = " UPDATE factorys " + "SET COMPANY = '"+newcompany+"' " + "WHERE COMPANY_ID = '"+companyid+"' ";
             count = statement.executeUpdate(query); // CAR-01 의 AUDI를 페라리로 변경
           
             query = "delete FROM factorys " + "WHERE COMPANY_ID = '"+companyid+"'";
