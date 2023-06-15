@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 
+import com.mysql.cj.jdbc.interceptors.ResultSetScannerInterceptor;
+
 import cars.FactoryDMLs;
 
 import java.util.ArrayList;
@@ -31,11 +33,12 @@ public class SurveysApp {
                     "FROM statistics\n" + //
                     "GROUP BY RESPONDENTS_ID) AS t_STATIC";
             // FactoryDMLs factoryDMLs = new FactoryDMLs();
-            // ResultSet resultSet = factoryDMLs.selectStatements(statement, query); // select문에서 table 형태의 결과값 출력명령어
-            ResultSet reusltSet =  statement.executeQuery(queryB);
-                        while (resultSet.next()) {
-                System.out.println(resultSet.getString("COMPANY_ID") +
-                        resultSet.getString("COMPANY"));
+            // ResultSet resultSet = factoryDMLs.selectStatements(statement, query); //
+            // select문에서 table 형태의 결과값 출력명령어
+            ResultSet reusltSet = statement.executeQuery(queryB);
+            while (reusltSet.next()) {
+                System.out.println(reusltSet.getString("COMPANY_ID") +
+                        reusltSet.getString("COMPANY"));
 
             }
 
