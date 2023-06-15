@@ -4,7 +4,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 
+<<<<<<< HEAD
 import Surveys.Statistics;
+=======
+import com.mysql.cj.jdbc.interceptors.ResultSetScannerInterceptor;
+
+>>>>>>> 66ae7a39dd2b6a818ee7d08a7fab79fd87ddc376
 import cars.FactoryDMLs;
 
 import java.util.ArrayList;
