@@ -1,4 +1,4 @@
-package Surveys;
+package surveys;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
