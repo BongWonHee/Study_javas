@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 
-import com.mysql.cj.jdbc.interceptors.ResultSetScannerInterceptor;
 
 import cars.FactoryDMLs;
 import surveys.Statistics;
@@ -26,20 +25,10 @@ public class SurveysApp {
             // - query Edit
             Statement statement = connection.createStatement(); // DB자원
 
-            System.out.println("--- 통계 ---");
-            // -- 총 설문자 : 3명
+            Statistics statistics = new Statistics();
+            statistics.getRespondents(statement);
 
-            queryA = "select count(*) CNT\n" + //
-                    "from\n" + //
-                    "(SELECT \n" + //
-                    "RESPONDENTS_ID, COUNT(RESPONDENTS_ID) AS CNT\n" + //
-                    "FROM\n" + //
-                    "statistics\n" + //
-                    "GROUP BY RESPONDENTS_ID) as T_STATIC ";
-            ResultSet resultSet = statement.executeQuery(queryA); // select문에서 table 형태의 결과값 출력명령어
-            while (resultSet.next()) {
-                System.out.println("--- 총 질문자 : " + resultSet.getString("CNT"));
-            }
+           
             // SELECT COUNT(*) CNT
             // FROM (SELECT RESPONDENTS_ID, COUNT(*) AS CNT
             // FROM statistics
@@ -53,13 +42,13 @@ public class SurveysApp {
             // ResultSet resultSet = factoryDMLs.selectStatements(statement, query); //
             // select문에서 table 형태의 결과값 출력명령어
             ResultSet reusltSet = statement.executeQuery(queryB);
-            while (resultSet.next()) {
-                System.out.println("총 설문자: " + resultSet.getString("CNT"));
+            while (reusltSet.next()) {
+                System.out.println("총 설문자: " + reusltSet.getString("CNT"));
 
             }
             Statistics statistics = new Statistics();
             statistics.getRespondents(statement);
-            
+
 
         } catch (Exception e) {
 
