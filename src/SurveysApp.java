@@ -7,6 +7,7 @@ import java.util.HashMap;
 import com.mysql.cj.jdbc.interceptors.ResultSetScannerInterceptor;
 
 import cars.FactoryDMLs;
+import surveys.Statistics;
 
 import java.util.ArrayList;
 
@@ -43,7 +44,7 @@ public class SurveysApp {
             // FROM (SELECT RESPONDENTS_ID, COUNT(*) AS CNT
             // FROM statistics
             // GROUP BY RESPONDENTS_ID) AS t_STATIC;
-
+            // 총 설문자 3명
             String queryB = "SELECT COUNT(*) CNT\n" + //
                     "FROM (SELECT RESPONDENTS_ID, COUNT(*) AS CNT\n" + //
                     "FROM statistics\n" + //
@@ -53,10 +54,12 @@ public class SurveysApp {
             // select문에서 table 형태의 결과값 출력명령어
             ResultSet reusltSet = statement.executeQuery(queryB);
             while (resultSet.next()) {
-                System.out.println(resultSet.getString("COMPANY_ID") +
-                        resultSet.getString("COMPANY"));
+                System.out.println("총 설문자: " + resultSet.getString("CNT"));
 
             }
+            Statistics statistics = new Statistics();
+            statistics.getRespondents(statement);
+            
 
         } catch (Exception e) {
 
