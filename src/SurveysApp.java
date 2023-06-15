@@ -36,6 +36,23 @@ public class SurveysApp {
             ResultSet resultSet = statement.executeQuery(queryA); // select문에서 table 형태의 결과값 출력명령어
             while (resultSet.next()) {
                 System.out.println("--- 총 질문자 : " + resultSet.getString("CNT"));
+            }
+            // SELECT COUNT(*) CNT
+            // FROM (SELECT RESPONDENTS_ID, COUNT(*) AS CNT
+            // FROM statistics
+            // GROUP BY RESPONDENTS_ID) AS t_STATIC;
+
+            String queryB = "SELECT COUNT(*) CNT\n" + //
+                    "FROM (SELECT RESPONDENTS_ID, COUNT(*) AS CNT\n" + //
+                    "FROM statistics\n" + //
+                    "GROUP BY RESPONDENTS_ID) AS t_STATIC";
+            // FactoryDMLs factoryDMLs = new FactoryDMLs();
+            // ResultSet resultSet = factoryDMLs.selectStatements(statement, query); //
+            // select문에서 table 형태의 결과값 출력명령어
+            ResultSet reusltSet = statement.executeQuery(queryB);
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("COMPANY_ID") +
+                        resultSet.getString("COMPANY"));
 
             }
 
