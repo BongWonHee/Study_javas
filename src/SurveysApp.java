@@ -22,7 +22,7 @@ public class SurveysApp {
             String queryA = "";
             Connection connection = DriverManager.getConnection(url, user, password); // network 자원사용
             System.out.println("DB연결 성공\n");
-
+            Scanner scanners = new Scanner(System.in);
             // - query Edit
             Statement statement = connection.createStatement(); // DB자원
 
@@ -32,15 +32,19 @@ public class SurveysApp {
             // 1. 홍길동, 2.장길산, 3.신사임당, ...
             queryA = "select *\n" + //
                     "From respondents";
-
+            Commons commons = new Commons();
             ResultSet resultSet = statement.executeQuery(queryA);
             int number = 1;
+            HashMap<String, String> respondent_info = new HashMap<>();
             while (resultSet.next()) {
                 System.out.print(number + "." + resultSet.getString("RESPONDENTS") + "  ");
+                respondent_info.put(String.valueOf(number), resultSet.getString("RESPONDENTS_ID"));
                 number = number + 1;
             }
             System.out.println();
-
+            // 설문자 선택
+            System.out.println("설문자 선택 : ");
+            String respondent = scanners.nextLine();
             // -- 설문 시작
             // -------- 참조 : poll contents example -------------
             // -- 1. 교수는 수업 전 강의 목표를 명확히 제시하였습니까?
@@ -53,19 +57,36 @@ public class SurveysApp {
 
             resultSet = statement.executeQuery(queryA);
             Statement statement_second = connection.createStatement();
+            int number1 = 1;
             while (resultSet.next()) {
-                System.out.println(resultSet.getString("questions"));
+                System.out.println(number1 + " . " + resultSet.getString("questions"));
+
                 queryA = "select *\n" + //
                         "From choice";
 
                 ResultSet resultSet_second = statement_second.executeQuery(queryA);
                 number = 1;
+                HashMap<String, String> choiceInfor = new HashMap<>(); // choce_id 의 hashmap을 만든다.
                 while (resultSet_second.next()) {
                     System.out.print(number + "." + resultSet_second.getString("choice") + " ");
+                    choiceInfor.put(String.valueOf(number), resultSet_second.getString("choice_ID")); //
                     number = number + 1;
-
                 }
+                // statement_second.close(); //사용을한 statement_second를 닫아줌.
                 System.out.println();
+                // insert문 시작
+                System.out.println("답항선택 : ");
+
+                String choice_key = scanners.nextLine();
+                queryA = "insert into statistics\n" + //
+                        "(STATISTICS_ID, RESPONDENTS_ID, QUESTIONS_ID, CHOICE_ID)\n" + //
+                        "value\n" + //
+                        "('" + commons.generatUuid() + "','" + respondent_info.get(respondent) + "','"
+                        + resultSet.getString("questions_ID")
+                        + "','" + choiceInfor.get(choice_key)
+                        + "')";
+                int resultin = statement_second.executeUpdate(queryA);
+                number1 = number1 + 1;
             }
 
             // -- 총 설문자 : 3명
@@ -93,7 +114,7 @@ public class SurveysApp {
                     "FROM respondents";
             resultSet = statement.executeQuery(queryA);
             number = 1;
-            Scanner scanners = new Scanner(System.in);
+            scanners = new Scanner(System.in);
 
             HashMap<String, String> repondentsInfo = new HashMap<String, String>();
             while (resultSet.next()) {
@@ -103,7 +124,7 @@ public class SurveysApp {
                 System.out.println();
             }
             System.out.print("설문자 선택:");
-            String respondent = scanners.nextLine();
+            respondent = scanners.nextLine();
 
             // 3) 설문 시작 리뷰는 1, 2번만 할 예정. 답은 우선 생략한다.
             // -- 1. 교수는 수업 전 강의 목표를 명확히 제시하였습니까?
@@ -116,7 +137,7 @@ public class SurveysApp {
             number = 1;
             statement_second = connection.createStatement();
 
-            Commons commons = new Commons(); // get.generic???
+            commons = new Commons(); // get.generic???
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("QUESTIONS"));
                 // 4) 답항 나오는건 질문이 사라지지 않게 종속적인 쿼리문필요
@@ -155,11 +176,12 @@ public class SurveysApp {
                 // 이 답항 부분을 고민해야함. C3..이걸 매칭할수있는 값을 만들어야함.
                 // Q1도 getString받되 PK로 받기
                 // 'R1'에 대한건 HASHMAP으로 설문자 선택을하여 가져온다.
+                    
             }
             System.out.println();
 
             // 만든 순서 1) 총 설문자 표시
-
+            // statistics 의 method 적용 사항
             statistics = new Statistics();
             statistics.getRespondents(statement);
         } catch (Exception e) {
@@ -168,4 +190,5 @@ public class SurveysApp {
         }
 
     }// return 0 ;
+
 }
