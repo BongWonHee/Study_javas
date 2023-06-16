@@ -37,6 +37,21 @@ FROM questions
 -- PK, FK로 이어져 있음을 알 수 있음. 고로 Q1코드로 답항을 가져올 수 있다.
 -- PK도 봐야하고 FK도 봐야하는데..> 
 
+-- 일단 statistics에 있는 김영희씨항목을 delete하기
+DELETE FROM statistics
+WHERE RESPONDENTS_ID = 'R1';
+
+-- insert 김영희씨 항목에 맞게 하기, STATISTICS_ID는 자동 발생 '임의'
+-- 응답자에 대한 설문 입력 결과
+INSERT INTO statistics
+(STATISTICS_ID,RESPONDENTS_ID,QUESTIONS_ID,CHOICE_ID)
+VALUES
+('ST-01', 'R1', 'Q1','C3');
+INSERT INTO statistics
+(STATISTICS_ID,RESPONDENTS_ID,QUESTIONS_ID,CHOICE_ID)
+VALUES
+('ST-02', 'R1', 'Q2','C1');
+
 
 
  
