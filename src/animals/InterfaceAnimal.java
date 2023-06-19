@@ -7,7 +7,7 @@ public interface InterfaceAnimal {
 
     public String setEnbleSpeech(String val);
 
-    public int speed (int val);
+    
 }
 
 

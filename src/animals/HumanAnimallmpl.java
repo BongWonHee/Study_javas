@@ -3,36 +3,31 @@ package animals;
 public class HumanAnimallmpl implements InterfaceAnimal {
     int setLegs = 2;
     int setArms = 2;
-    String setEnbleSpeech = "yes";
-    int speed = 3;
-
+    String setEnbleSpeech = "Yes" ;
+    
     @Override
     public int setLegs(int val) {
-        this.setLegs = this.setLegs;
-        return setLegs;
+        this.setLegs = setLegs;
+        return this.setLegs;
 
     }
 
     @Override
     public int setArms(int val) {
-        this.setArms = this.setArms;
-        return setArms;
+        this.setArms = setArms;
+        return this.setArms;
     }
 
     @Override
     public String setEnbleSpeech(String val) {
-        this.setEnbleSpeech = this.setEnbleSpeech;
-        return setEnbleSpeech;
+        this.setEnbleSpeech = setEnbleSpeech;
+        return this.setEnbleSpeech;
     }
 
-    @Override
-    public int speed(int val) {
-        this.speed = this.speed;
-        return speed;
-    }
+    
 
     public String toString() {
-        String str = " arms : " + setArms + " Legs : " + setLegs + " speech : " + setEnbleSpeech;
+        String str = " arms : " + this.setArms + " Legs : " + this.setLegs + " speech : " + this.setEnbleSpeech;
         return str;
     }
 

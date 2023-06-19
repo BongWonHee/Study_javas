@@ -1,41 +1,24 @@
 package animals;
 
-public class HorseAnmalExtend implements InterfaceAnimal{
-     int setLegs = 4;
-    int setArms = 0;
-    String setEnbleSpeech = "No";
-    int speed = 12;
+public class HorseAnmalExtend extends HoresAnimallmpl {
+    int speed = 15;
 
-    @Override
-    public int setLegs(int val) {
-        this.setLegs = this.setLegs;
-        return setLegs;
-    }
-
-    @Override
-    public int setArms(int val) {
-        this.setArms = this.setArms;
-        return setArms;
+    public HorseAnmalExtend(){
 
     }
 
-    @Override
-    public String setEnbleSpeech(String val) {
-        this.setEnbleSpeech = this.setEnbleSpeech;
-        return setEnbleSpeech;
+    public HorseAnmalExtend(int setLegs, int setArms, String setEnbleSpeech, int speed){
+        this.setLegs = setLegs;
+        this.setArms = setArms;
+        this.setEnbleSpeech = setEnbleSpeech;
+        this.speed = speed;
 
     }
 
-    @Override
-    public int speed(int val) {
-        this.speed = this.speed;
-        return speed;
-
-    }
-
-
-    public String getSpeed(){
-        String inter = " arms : " + setArms + " Legs : " + setLegs + " speech : " + setEnbleSpeech + " Speed : " + speed + "Km";
-        return inter;
+    public String getSpeed() {
+        String str = "legs : " + this.setLegs + ", arms : " + this.setArms + ", speech : " + this.setEnbleSpeech
+                + ", speed : "
+                + this.speed + "km";
+        return str;
     }
 }
