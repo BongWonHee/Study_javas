@@ -32,7 +32,7 @@ public class SurveysApp {
             // 1. 홍길동, 2.장길산, 3.신사임당, ...
             queryA = "select *\n" + //
                     "From respondents";
-            Commons commons = new Commons();
+
             ResultSet resultSet = statement.executeQuery(queryA);
             int number = 1;
             HashMap<String, String> respondent_info = new HashMap<>();
@@ -57,6 +57,7 @@ public class SurveysApp {
 
             resultSet = statement.executeQuery(queryA);
             Statement statement_second = connection.createStatement();
+            Commons commons = new Commons();
             int number1 = 1;
             while (resultSet.next()) {
                 System.out.println(number1 + " . " + resultSet.getString("questions"));
@@ -71,12 +72,13 @@ public class SurveysApp {
                     System.out.print(number + "." + resultSet_second.getString("choice") + " ");
                     choiceInfor.put(String.valueOf(number), resultSet_second.getString("choice_ID")); //
                     number = number + 1;
+
                 }
-                // statement_second.close(); //사용을한 statement_second를 닫아줌.
+                // 사용을한 statement_second를 닫아줌.
                 System.out.println();
                 // insert문 시작
                 System.out.println("답항선택 : ");
-
+                // statement_second.close();
                 String choice_key = scanners.nextLine();
                 queryA = "insert into statistics\n" + //
                         "(STATISTICS_ID, RESPONDENTS_ID, QUESTIONS_ID, CHOICE_ID)\n" + //
@@ -85,9 +87,10 @@ public class SurveysApp {
                         + resultSet.getString("questions_ID")
                         + "','" + choiceInfor.get(choice_key)
                         + "')";
-                int resultin = statement_second.executeUpdate(queryA);
+                // int result = statement_second.executeUpdate(queryA);
                 number1 = number1 + 1;
             }
+            statement_second.close();
 
             // -- 총 설문자 : 3명
             // select문에서 table 형태의 결과값 출력명령어
