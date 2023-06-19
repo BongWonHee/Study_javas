@@ -16,11 +16,11 @@ public class Inheritances {
             // 상속해서 활용_class MountainBike
             // MountainBike mountainBike = new MountainBike();
             // MountainBike mountainBike = new MountainBike(6200,"yellow",5);
-            // RoadCycle roadCycle = new RoadCycle ();
-            RoadCycle roadCycle = new RoadCycle ("samcheonri",3000000, "Black");
+            // System.out.println();
 
-            System.out.println();
 
+            RoadCycle roadCycle = new RoadCycle(6200, "red","삼천리자전거" );
+            System.out.println(roadCycle.toString());
         } catch (Exception e) {
             System.out.println(e.getMessage());
             // TODO: handle exception

@@ -1,23 +1,18 @@
 package vehicles;
 
 public class RoadCycle extends Bicycle{
-    String name;
+    String name ;
+    
     public RoadCycle(){
 
     }
-
-    public RoadCycle(String productname, int price, String color){
-        this.name=productname;
+    public RoadCycle(int price, String color, String productname){
         super.price = price;
         super.color = color;
-        
-    }//초기화?
-
+        this. name = productname ; //제품명 변수
+    }
     public String toString(){
-        String spec = "Product name :" +this.name+
-        "/ Price :"+this.price+
-        "/ Color :"+this.color; 
-        return spec;
-    } // toString 출력?
-    
+        String srt = " price : "+ super.price +", color : " +super.color + ", 제품명 : " + this.name;
+        return srt ;
+    }
 }
