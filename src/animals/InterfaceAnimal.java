@@ -1,8 +1,13 @@
 package animals;
 
 public interface InterfaceAnimal {
-    public int setLegs(int legs);
-    public int setArms(int arms);
-    public String setEnableSpeech(String speech);
+    public int setLegs(int val);
 
+    public int setArms(int val);
+
+    public String setEnbleSpeech(String val);
+
+    public int speed (int val);
 }
+
+

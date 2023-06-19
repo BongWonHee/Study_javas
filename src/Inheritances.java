@@ -4,11 +4,13 @@ import java.util.Map;
 import inheritances.ObjectInheritances;
 import vehicles.Bicycle;
 import vehicles.Bike;
-import vehicles.Car;
 import vehicles.MountainBike;
 import vehicles.RoadCycle;
 import vehicles.Scooter;
 import vehicles.Vehicle;
+import vehicles.Car;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Inheritances {
     public static void main(String[] args) {
@@ -22,32 +24,29 @@ public class Inheritances {
 
             // 상속해서 활용_class MountainBike
             // MountainBike mountainBike = new MountainBike();
-            MountainBike mountainBike = new MountainBike(6200,"yellow",5);
+            // MountainBike mountainBike = new MountainBike(6200,"yellow",5);
             // System.out.println();
 
-            RoadCycle roadCycle = new RoadCycle(6200, "red","삼천리자전거" );
-            System.out.println(roadCycle.toString());
-            // interface Vehicle를 Car클래스로 구체화 시키고 호출하기
+            // RoadCycle roadCycle = new RoadCycle(6200, "red","삼천리자전거" );
+            // System.out.println(roadCycle.toString());
+            // 구현호출
             // Car car = new Car();
-            // int speed = car.SpeedUp(10);
-            // speed = car.SpeedDown(20);
-            // System.out.println();
 
-            // Bike
+            // int speed = car.speedUp(1);
+            // speed = car.speedDown(2);
             // Vehicle bike = new Bike();
-            // vehicle에 구현되지 않는 interface method 있음.
-            // 이 method에 대한 부분을 Bike class를 통해서 구체화함.
-            // Vehicle bike 이 bike는 결국 Bike에서 온것.
             // Vehicle car_second = new Car();
-            // Map<String, String> hashMap = new HashMap<>();
 
-            //Abstraction 확인_Scooter
+            //Abstract확인
             Scooter scooter = new Scooter();
-            
+
             System.out.println();
+
+            Map<String, String> hashmap = new HashMap();
+            // 명령어instanceof 해당 변수가 어떤것의 class의 인스턴스 값인지 확인해줄때 사용
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            // TODO: handle exception
+           
         }
         System.out.println();
     }
