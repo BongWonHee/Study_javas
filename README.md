@@ -35,3 +35,4 @@
 | while | [PollWhiles.java](./src/cases/PollWhiles.java) | While 과제 | |
 | Methodsifs |[Methodsifs.java](./src/Methodsifs.java)| if문에 Method 적용 과제 | |
 | MethodSwhichs | [MethodSwhichs.java](./src/MethodSwhichs.java)| Swhich문에 Method 적용 과제 | |
+| AnimalMain | [AnimalMain.java](./src/animals/AnimalMain.java) | extends 와 implements 복합적용 과제 ||
